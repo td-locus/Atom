@@ -1,0 +1,15 @@
+.divider {
+  min-height: 80%;
+  border: 1px solid var(--primary);
+  margin: auto 10px;
+}
+
+.member__socials a,
+.domain {
+  color: var(--primary);
+  line-height: 1.1rem;
+}
+.member__card {
+  min-height: 100%;
+  position: relative;
+}

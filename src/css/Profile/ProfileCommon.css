@@ -1,0 +1,56 @@
+.techstacks-box .card,
+.skills-box .card,
+.contact-box .card,
+.college-box .card {
+	overflow: hidden;
+	background-color: rgb(247, 247, 247);
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	border: none;
+	max-height: fit-content;
+	width: min(400px, 90%);
+}
+
+.techstacks-box,
+.skills-box,
+.contact-box,
+.college-box {
+	padding: 1em 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.socialLinks > a {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	/* margin: 0 auto; */
+}
+
+.socialLinks p {
+	margin: auto;
+	margin-left: 8px;
+	color: #2596be;
+}
+
+.college-details {
+	color: #2596be;
+}
+
+.share-icon-tooltip {
+	position: fixed;
+	bottom: 1em;
+	right: 1em;
+}
+
+.share-icon {
+	background: #2596be;
+	color: #ffffff !important;
+	border-radius: 50%;
+	padding: 0.2em;
+	cursor: pointer;
+}
+
+.share-icon:hover {
+	transform: scale(1.2);
+}

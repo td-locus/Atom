@@ -1,0 +1,14 @@
+@media (max-width: 1065px) {
+  .hide_mobile {
+    display: none !important;
+  }
+}
+@media (min-width: 1065px) {
+  .hide_screen {
+    display: none !important;
+  }
+}
+.hide_screen {
+  position: relative;
+  top: -5px;
+}

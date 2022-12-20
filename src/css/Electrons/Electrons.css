@@ -1,0 +1,43 @@
+.searchUser input {
+  padding-left: 5px !important;
+}
+.text-overflow {
+  position: relative;
+  overflow: hidden;
+}
+.text-overflow small {
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+}
+.electron .name {
+  /* display: block; */
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+}
+.electron small {
+  opacity: 0.8;
+}
+.electronImage div {
+  width: 70px;
+  height: 70px;
+  transition: width 0.2s, height 0.2s;
+}
+@media (max-width: 794px) and (min-width: 620px) {
+  .electronDetails {
+    padding-left: 20px;
+  }
+}
+@media (max-width: 619px) and (min-width: 575px) {
+  .electronDetails {
+    padding-left: 30px;
+  }
+}
+@media (max-width: 440px) {
+  .electronImage div {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 5px;
+  }
+}

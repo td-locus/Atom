@@ -1,0 +1,87 @@
+.bg-overlay {
+  position: relative;
+  background-color: var(--primary);
+  min-height: 100vh;
+}
+.bg-overlay img {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.auth-logo {
+  width: 100px !important;
+  height: 105px !important;
+}
+.auth-form-container.login,
+.auth-form-container.forgot-password {
+  padding: 50px 35px 0px 30px;
+}
+.auth-form-container.signup {
+  padding: 30px 35px 0px 30px;
+}
+
+.auth-button,
+.auth-button:active,
+.auth-button:focus {
+  background-color: var(--primary) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.auth-button {
+  width: 100%;
+  border-radius: 100px !important;
+  padding: 15px 0 !important;
+  margin-top: 10px;
+  font-size: 1rem !important;
+  font-weight: 600;
+  transition: background-color 0.3s;
+}
+.auth-button:hover {
+  background-color: #2187ac !important;
+}
+.bottom-text {
+  margin-top: 10px;
+}
+.bottom-text a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+#or {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+#or .line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(212, 212, 212);
+  position: absolute;
+  top: 14px;
+  z-index: -1;
+}
+#or span {
+  padding: 10px;
+  background-color: white;
+  font-size: 0.9rem;
+  color: rgb(212, 212, 212);
+  font-weight: 600;
+}
+.change-email {
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+/* Media queries  */
+@media (max-width: 767px) {
+  .bg-overlay {
+    display: none;
+  }
+}

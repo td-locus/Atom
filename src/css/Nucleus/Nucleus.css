@@ -1,0 +1,25 @@
+.member__card {
+  position: relative;
+  background-color: rgb(247, 247, 247);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  overflow: hidden;
+}
+
+.member__domains > div {
+  padding: 5px;
+  border: solid 1px var(--primary);
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.member__socials > * {
+  cursor: pointer;
+}
+.member__card .period {
+  color: var(--primary);
+}
+/* .mentor_image img {
+  width: 400px;
+  height: 350px;
+} */

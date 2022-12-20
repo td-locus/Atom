@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary: #2596be;
+  --secondary: #1a6885;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  overflow-x: hidden;
+}
+.container-fluid.auth-layout {
+  padding-left: 100px !important;
+  padding-right: 30px !important;
+}
+
+.MuiSnackbar-root {
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.25);
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-moz-autofill,
+input:-moz-autofill:hover,
+input:-moz-autofill:focus,
+input:-moz-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+.auth-layout .MuiTextField-root label {
+  padding: 0 5px;
+}
+.auth-layout .MuiTextField-root label[data-shrink="true"] {
+  transform: translate(14px, -12px) scale(0.75) !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+.auth-layout .MuiTextField-root input {
+  padding-left: 20px !important;
+}
+
+.auth-layout .MuiTextField-root textarea {
+  padding-left: 5px !important;
+}
+
+.MuiFormControlLabel-root span:nth-child(2) {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+.badge-primary {
+  background-color: var(--primary);
+  color: white;
+}
+.heading h3 {
+  font-weight: 600;
+  font-size: 1.9rem;
+}
+@media (max-width: 992px) {
+  .heading h3 {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 767px) {
+  .heading h3 {
+    font-size: 1.7rem;
+  }
+}

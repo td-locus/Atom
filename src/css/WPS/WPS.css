@@ -1,0 +1,66 @@
+.event .card {
+  overflow: hidden;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  height: 100%;
+  /* max-height: ; */
+}
+.event .card-body {
+  background-color: #90d9f7;
+}
+.event-heading .season {
+  font-size: 0.7rem;
+  margin-top: 3px;
+}
+.Event .card-footer {
+  padding: 1.3em;
+}
+.event {
+  height: 100% !important;
+  cursor: pointer;
+}
+.Event .text-primary {
+  color: var(--secondary) !important;
+}
+.event-heading .timer {
+  position: relative;
+  right: 4px;
+  top: -1px;
+  font-size: 13px;
+}
+.w-100 .timer {
+  position: relative;
+  right: 4px;
+  top: 0px;
+  font-size: 13px;
+}
+.w-100 .timer + span {
+  font-size: 13px;
+}
+.event-footer .owner {
+  font-size: 0.9rem;
+}
+
+.Event .description {
+  max-height: 100px;
+  min-height: 70px;
+}
+.eventModalOpen {
+  width: 500px;
+}
+@media (max-width: 550px) {
+  .eventModalOpen {
+    width: 450px;
+  }
+}
+
+@media (max-width: 475px) {
+  .eventModalOpen {
+    width: 400px;
+  }
+}
+@media (max-width: 410px) {
+  .eventModalOpen {
+    width: 340px;
+  }
+}

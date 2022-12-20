@@ -1,0 +1,44 @@
+button[aria-selected="true"] {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--primary);
+  border-radius: 5px;
+}
+.details-heading {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+.deleteAccount {
+  font-size: 0.9rem;
+}
+.college {
+  position: relative;
+}
+.MuiFormControl-root label[data-shrink="true"] {
+  transform: translate(14px, -12px) scale(0.75) !important;
+  background-color: rgb(255, 255, 255) !important;
+  padding: 0 5px;
+}
+.info-social,
+.info-social svg {
+  font-size: 12px;
+  color: var(--primary);
+}
+.info-social svg {
+  position: relative;
+  top: -1px;
+  margin-right: 2px;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 100% !important;
+  }
+}
+@media (max-width: 660px) {
+  .my-details-form .MuiTabs-scroller {
+    overflow-x: scroll !important;
+    scrollbar-color: rgb(59, 59, 59);
+    scrollbar-width: thin;
+  }
+}

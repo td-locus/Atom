@@ -1,0 +1,64 @@
+.auth-form {
+  padding: 20px 10px 10px 10px;
+}
+.auth-form h2 {
+  font-weight: 600;
+}
+
+.google-signin {
+  position: relative;
+  margin: 10px 0;
+}
+
+.google-oauth {
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 30px;
+  font-weight: 600;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgb(212, 212, 212);
+  transition: background-color 0.3s;
+}
+.google-oauth:hover {
+  border: 1px solid rgb(165, 164, 164);
+}
+.google-oauth img {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
+}
+
+.login-form,
+.myspace-form {
+  margin-top: 15px;
+  position: relative;
+}
+.auth-form .MuiOutlinedInput-root {
+  border-radius: 100px !important;
+}
+
+.forgot {
+  text-align: right;
+  margin-bottom: 22px;
+}
+.forgot-pass {
+  text-decoration: none;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.auth label {
+  padding: 0 5px;
+}
+.auth label[data-shrink="true"] {
+  transform: translate(14px, -12px) scale(0.75) !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+.auth input {
+  padding-left: 20px !important;
+}

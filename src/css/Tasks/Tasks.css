@@ -1,0 +1,9 @@
+@media (max-width: 591px) {
+  .markButton {
+    font-size: 12px !important;
+  }
+}
+.assignor-name {
+  color: var(--primary);
+  font-size: 0.85rem;
+}
