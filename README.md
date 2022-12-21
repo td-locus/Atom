@@ -66,6 +66,31 @@ yarn start
 
 Atom is a [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) application and this project hosts the client application built using React and Material-UI.
 
+<table>
+    <tr>
+        <td>
+            <a href="https://reactjs.org/">
+                <img src="https://user-images.githubusercontent.com/68579547/209023814-9f4920da-cf53-4675-a8cb-4dcbd94d559b.png" alt="React" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://mui.com/">
+                <img src="https://user-images.githubusercontent.com/68579547/209023956-f5c03a1d-8225-41db-b950-2895ae5df774.png" alt="MUI" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://www.npmjs.com/package/axios">
+                <img src="https://user-images.githubusercontent.com/68579547/209024085-a782ac03-2668-4402-9d4d-10e143416319.png" alt="Axios" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                <img src="https://user-images.githubusercontent.com/68579547/209024233-a7651ac2-c829-44a2-aa69-00843addcd46.png" alt="JavaScript" width="120px" height="auto" />
+            </a>
+        </td>
+    </tr>
+</table>
+
 ## Contributing ➕
 
 **Atom** is an Open-Source project. This means that you are free to explore the source code, make changes that you think can improve the platform or suggest changes that others can look into.
