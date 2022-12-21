@@ -10,7 +10,7 @@
 
 - [Getting Started](#getting-started-)
 - [Quick Start](#quick-start-)
-- [Tech Stack](#tech-stack-)
+- [Tech Stack](#tech-stack-%EF%B8%8F)
 - [Contributing](#contributing-)
 - [License](#license-)
 
