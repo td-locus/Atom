@@ -99,6 +99,18 @@ Atom is a [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) application an
 - If you're not sure where you want to contribute, take a look at the [project **issues**](https://github.com/td-locus/Atom/issues) to get an idea of where you can start.
 - ***Not familiar with the code? And have some suggestions?*** Head over to the [project **issues**](https://github.com/td-locus/Atom/issues) and open a new issue for the team to take a look at.
 
+### FAQ
+
+<!-- - How a contribution is reviewed and accepted (Do they need tests? An issue template?) -->
+
+<!-- - The types of contributions you’ll accept (Do you only want help with a certain part of your code?) -->
+
+- When it’s appropriate to follow up? 
+  You can expect a response from a maintainer within 7 days. If you haven’t heard anything by then, feel free to ping the thread.
+
+- How much time you spend on the project?
+  We only spend about 5 hours per week on this project
+
 ## License 📜
 
 This project is licensed under the [MPL License](./LICENSE).
