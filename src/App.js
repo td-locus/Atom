@@ -23,10 +23,8 @@ import { ErrorBoundary } from "./components/Reusable/ErrorBoundary";
 
 if (process.env.NODE_ENV === "development") {
   axios.defaults.baseURL = "http://localhost:9000";
-} else if (process.env.NODE_ENV === "production") {
+} else {
   axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
-} else if (process.env.NODE_ENV === "staging") {
-  axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL_STAGING;
 }
 
 const theme = createTheme({
