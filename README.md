@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Atom ⚛️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+    <img src="https://repository-images.githubusercontent.com/580392019/1f682aed-58b3-4dcb-a289-b847fd0f9edb" width="60%" />
+</p>
 
-## Available Scripts
+**Atom** is a platform enabling the Think-Digital community to share information and resources, keep tabs on happenings, and streamline their processes through automation tools.
 
-In the project directory, you can run:
+**Table of Contents**:
 
-### `yarn start`
+- [Getting Started](#getting-started-)
+- [Quick Start](#quick-start-)
+- [Tech Stack](#tech-stack-%EF%B8%8F)
+- [Contributing](#contributing-)
+- [License](#license-)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting Started 🚀
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Visit [https://atom.think-digital.in](https://atom.think-digital.in) and create an account to get started with our platform.
 
-### `yarn test`
+If you're a project member, head on over to the [CONTRIBUTING.md](./CONTRIBUTING.md) to learn how to set up Atom in your local device to start making changes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you're new here or have some recommendations, check the [Contributing ➕](#contributing-) section to learn more ways you can make an impact.
 
-### `yarn build`
+## Quick Start ⚡
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Clone or [fork](https://github.com/td-locus/Atom/fork) this repository.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/td-locus/Atom.git
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Install all dependencies.
 
-### `yarn eject`
+Using NPM.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm install
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Using Yarn.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+yarn
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Get access to `.env` to start working.
 
-## Learn More
+To gain access contact the [organization owners](mailto:team@think-digital.in) or head over to the [CONTRIBUTING.md](./CONTRIBUTING.md) guide and learn how to create your own variables.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Start the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Using NPM.
 
-### Code Splitting
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Using Yarn.
 
-### Analyzing the Bundle Size
+```bash
+yarn start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tech Stack ⚙️
 
-### Making a Progressive Web App
+Atom is a [MERN Stack](https://www.geeksforgeeks.org/mern-stack/) application and this project hosts the client application built using React and Material-UI.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+<table>
+    <tr>
+        <td>
+            <a href="https://reactjs.org/">
+                <img src="https://user-images.githubusercontent.com/68579547/209023814-9f4920da-cf53-4675-a8cb-4dcbd94d559b.png" alt="React" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://mui.com/">
+                <img src="https://user-images.githubusercontent.com/68579547/209023956-f5c03a1d-8225-41db-b950-2895ae5df774.png" alt="MUI" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://www.npmjs.com/package/axios">
+                <img src="https://user-images.githubusercontent.com/68579547/209024085-a782ac03-2668-4402-9d4d-10e143416319.png" alt="Axios" width="120px" height="auto" />
+            </a>
+        </td>
+                <td>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+                <img src="https://user-images.githubusercontent.com/68579547/209024233-a7651ac2-c829-44a2-aa69-00843addcd46.png" alt="JavaScript" width="120px" height="auto" />
+            </a>
+        </td>
+    </tr>
+</table>
 
-### Advanced Configuration
+## Contributing ➕
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**Atom** is an Open-Source project. This means that you are free to explore the source code, make changes that you think can improve the platform or suggest changes that others can look into.
 
-### Deployment
+- If you're familiar with our stack, then head over to the [contributing guidelines](./CONTRIBUTING.md) to get started.
+- If you're not sure where you want to contribute, take a look at the [project **issues**](https://github.com/td-locus/Atom/issues) to get an idea of where you can start.
+- ***Not familiar with the code? And have some suggestions?*** Head over to the [project **issues**](https://github.com/td-locus/Atom/issues) and open a new issue for the team to take a look at.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### FAQ
 
-### `yarn build` fails to minify
+<!-- - How a contribution is reviewed and accepted (Do they need tests? An issue template?) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<!-- - The types of contributions you’ll accept (Do you only want help with a certain part of your code?) -->
+
+- When it’s appropriate to follow up? 
+  You can expect a response from a maintainer within 7 days. If you haven’t heard anything by then, feel free to ping the thread.
+
+- How much time you spend on the project?
+  We only spend about 5 hours per week on this project
+
+## License 📜
+
+This project is licensed under the [MPL License](./LICENSE).
