@@ -1,5 +1,6 @@
 import Auth from "../components/Auth/index";
 import MySpace from "../components/MySpace";
+import OnBoard from "../components/OnBoard";
 import WPS from "../components/WPS";
 import Molecules from "../components/Molecules";
 import Electrons from "../components/Electrons";
@@ -20,6 +21,7 @@ const publicRoutes = [
 const authenticatedRoutes = [
   { path: "/my-space", component: MySpace },
   { path: "/my-details", component: MyDetails },
+  { path: "/onboard", component: OnBoard },
   { path: "/wps", component: WPS },
   { path: "/molecules", component: Molecules },
   { path: "/electrons", component: Electrons },

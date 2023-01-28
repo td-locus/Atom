@@ -113,6 +113,13 @@ const Sidebar = () => {
             </NavLink>
             <span className="tooltip">My Space</span>
           </li>
+          {state.user.role === 'registered' && <li>
+            <NavLink onClick={toggleSidebar} to="/onboard">
+              <i className='bx bxs-coffee'></i>
+              <span className="links_name">On Boarding</span>
+            </NavLink>
+            <span className="tooltip">On Boarding</span>
+          </li>}
           <li>
             <NavLink onClick={toggleSidebar} to="/wps">
               <i className="bx bx-podcast"></i>
@@ -120,35 +127,35 @@ const Sidebar = () => {
             </NavLink>
             <span className="tooltip">WPS</span>
           </li>
-          <li>
+          {state.user.role !== 'registered' && <li>
             <NavLink onClick={toggleSidebar} to="/molecules">
               <i className="bx bx-desktop"></i>
               <span className="links_name">Molecules</span>
             </NavLink>
             <span className="tooltip">Molecules</span>
-          </li>
-          <li>
+          </li>}
+          {state.user.role !== 'registered' && <li>
             <NavLink onClick={toggleSidebar} to="/electrons">
               <i className="bx bxs-user-badge"></i>
               <span className="links_name">Electrons</span>
             </NavLink>
             <span className="tooltip">Electrons</span>
-          </li>
-          <li>
+          </li>}
+          {state.user.role !== 'registered' && <li>
             <NavLink onClick={toggleSidebar} to="/protons">
               <i className="bx bxs-user-circle"></i>
 
               <span className="links_name">Protons</span>
             </NavLink>
             <span className="tooltip">Protons</span>
-          </li>
-          <li>
+          </li>}
+          {state.user.role !== 'registered' && <li>
             <NavLink onClick={toggleSidebar} to="/nucleus">
               <i className="bx bx-user-pin"></i>
               <span className="links_name">Nucleus</span>
             </NavLink>
             <span className="tooltip">Nucleus</span>
-          </li>
+          </li>}
           <li>
             <NavLink onClick={toggleSidebar} to="/planets">
               <i className="bx bx-planet"></i>

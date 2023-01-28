@@ -8,76 +8,29 @@ import RecentActivity from "./RecentActivity";
 import UpcomingEvents from "./UpcomingEvents";
 import CreateTask from "./CreateTask";
 import ViewTasks from "./ViewTasks";
-import { FetchAudits, FetchProfileCompleted, FetchUpcomingEvents, FetchEventsByMe, GetTasksAssignor, GetTasksAssignee } from "./helper/API";
+import { FetchAudits, FetchUpcomingEvents, FetchEventsByMe, GetTasksAssignor, GetTasksAssignee } from "./helper/API";
 import { GetRole } from "../Auth/helper/Auth";
 
 import { useHistory } from "react-router";
 import { Container, Row, Col } from "reactstrap";
-import Box from "@mui/material/Box";
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
 
-import Button from "@mui/material/Button";
-import Slide from "@mui/material/Slide";
 import Drawer from "./Drawer";
 
-import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-  return <Slide direction="up" ref={ref} {...props} />;
-});
-
-function CircularProgressWithLabel({ value }) {
-  return (
-    <Box className="modalProfile text-center">
-      <div style={{ width: 100, height: 100, margin: "auto" }}>
-        <CircularProgressbarWithChildren
-          value={value}
-          background
-          backgroundPadding={3}
-          styles={buildStyles({
-            backgroundColor: "var(--primary)",
-            textColor: "#fff",
-            pathColor: "#fff",
-            trailColor: "transparent",
-          })}
-        >
-          <img style={{ width: 40, marginTop: -5 }} src="https://i.imgur.com/b9NyUGm.png" alt="doge" />
-          <div style={{ fontSize: 10, marginTop: -5, color: "white" }}>
-            <strong>{Math.round(value)}%</strong> mate
-          </div>
-        </CircularProgressbarWithChildren>
-      </div>
-      <Box>
-        <FormatListBulletedIcon className="listIcon" />
-        <strong className="text-uppercase fw-bold">Complete Your Profile</strong>
-        <div className="text-muted font-smaller">
-          <em>Fill out the details now</em>
-        </div>
-      </Box>
-    </Box>
-  );
+const OnBoardModal = () => {
+  return;
 }
 
 const MySpace = () => {
   const { dispatch } = useContext(DispatchContext);
 
   const [activities, setActivities] = useState([]);
-  const [open, setOpen] = useState(false);
-  const [percentageCompleted, setPercentageCompleted] = useState(0);
+  const [openOnBoard, setOpenOnBoard] = useState(false);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [events, setEvents] = useState([]);
   const [tasks, setTasks] = useState([]);
   const [tasksAssignee, setTasksAssignee] = useState([]);
 
   const history = useHistory();
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const fetchActivity = async () => {
     const response = await FetchAudits();
@@ -113,34 +66,27 @@ const MySpace = () => {
   const [role, setRole] = useState("");
   useEffect(() => {
     dispatch(showLoading());
-
     fetchActivity();
-
     fetchRole();
-
-    fetchUpcomingEvents();
-
+    fetchUpcomingEvents()
     fetchEventsByMe();
-
     getTasksAssignor();
-
     getTasksAssignee();
 
-    const showModal = async () => {
-      const percentage = await FetchProfileCompleted();
-      if (percentage < 90) {
-        setOpen(true);
-        setPercentageCompleted(percentage);
+    const showOnBoardModal = () => {
+      if (role === 'registered') {
+        if (!sessionStorage.getItem('prompted')) {
+          sessionStorage.setItem('prompted', true);
+          setOpenOnBoard(true);
+        }
       }
-    };
-    if (!localStorage.getItem("count")) localStorage.setItem("count", 0);
-    else localStorage.setItem("count", parseInt(localStorage.getItem("count")) + 1);
-    if (parseInt(localStorage.getItem("count")) === 0) {
-      showModal();
     }
+
+    showOnBoardModal();
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   }, []);
+
   const checkRole = () => {
     if (role === "mentor" || role === "lead") return true;
     return false;
@@ -148,22 +94,7 @@ const MySpace = () => {
 
   return (
     <Container fluid className="auth-layout py-3">
-      <Dialog open={open} TransitionComponent={Transition} maxWidth="sm" fullWidth={true} keepMounted onClose={handleClose} aria-describedby="alert-dialog-slide-description">
-        <DialogContent>
-          <CircularProgressWithLabel value={percentageCompleted} />
-        </DialogContent>
-        <DialogActions sx={{ p: 2 }}>
-          <Button onClick={handleClose} variant="outlined">
-            Dismiss
-          </Button>
-          <Button onClick={() => history.push("/my-details")} variant="contained">
-            Complete Now
-          </Button>
-        </DialogActions>
-      </Dialog>
-
       <Drawer role={checkRole()} events={events} tasks={tasks} />
-
       <Row className="gy-3">
         <Col sm={12} md={6} xl={4}>
           <ProfileBox />
