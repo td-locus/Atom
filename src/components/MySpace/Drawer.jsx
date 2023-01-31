@@ -43,7 +43,12 @@ const Drawer = ({ role, events, tasks }) => {
 
   const DrawerItemEvent = ({ event }) => {
     return (
-      <Box sx={{ minWidth: 330 }} role="presentation" onClick={() => history.push(`/events/edit?eventId=${event._id}`)} onKeyDown={toggleDrawer(false)}>
+      <Box
+        sx={{ minWidth: 330, borderRadius: "10px", backgroundColor: "#fff", boxShadow: "2px 2px 2px rgba(0,0,0,0.1)", border: "1px solid #e0e0e0", margin: "5px" }}
+        role="presentation"
+        onClick={() => history.push(`/events/edit?eventId=${event._id}`)}
+        onKeyDown={toggleDrawer(false)}
+      >
         <List>
           <ListItem button>
             <Event sx={{ fontSize: 15, mr: 1 }} />
@@ -64,7 +69,12 @@ const Drawer = ({ role, events, tasks }) => {
 
   const DrawerItemTask = ({ task }) => {
     return (
-      <Box sx={{ minWidth: 330 }} role="presentation" onClick={() => history.push(`/task/edit?taskId=${task._id}`)} onKeyDown={toggleDrawer(false)}>
+      <Box
+        sx={{ minWidth: 330, borderRadius: "10px", backgroundColor: "#fff", boxShadow: "2px 2px 2px rgba(0,0,0,0.1)", border: "1px solid #e0e0e0", margin: "5px" }}
+        role="presentation"
+        onClick={() => history.push(`/task/edit?taskId=${task._id}`)}
+        onKeyDown={toggleDrawer(false)}
+      >
         <List>
           <ListItem button>
             <Event sx={{ fontSize: 15, mr: 1 }} />
@@ -120,7 +130,8 @@ const Drawer = ({ role, events, tasks }) => {
           )}
         </div>
 
-        <Divider />
+        {/* <Divider /> */}
+        <div className="custom-divider"></div>
 
         <div className="d-flex justify-content-between">
           <h4 className="px-3 pt-3 fw-bold">Tasks</h4>

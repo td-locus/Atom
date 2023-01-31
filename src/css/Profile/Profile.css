@@ -97,9 +97,9 @@
   gap: 10px;
   margin-top: 20px;
 }
-.reset-form {
+/* .reset-form {
   background-color: grey !important;
-}
+} */
 .form-buttons button {
   width: 50%;
 }
@@ -249,21 +249,21 @@
 input.searchBox::placeholder {
   color: rgba(0, 0, 0, 1);
 }
-.date-joined{
-    font-size: small;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 8px 0;
-    margin-top: 16px;
-    line-height: 0;
+.date-joined {
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 8px 0;
+  margin-top: 16px;
+  line-height: 0;
 }
-.date-joined-text{
-    font-size: x-small;
+.date-joined-text {
+  font-size: x-small;
 }
-.sub-title{
-    font-size: medium;
-    text-align: left;
+.sub-title {
+  font-size: medium;
+  text-align: left;
 }
 @media (max-width: 767px) {
   .profile-box .name h3 {

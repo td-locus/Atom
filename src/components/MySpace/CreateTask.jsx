@@ -69,7 +69,7 @@ const CreateTask = ({ getTasksAssignor }) => {
     });
     for (let i = 0; i < assigneesArr.length; i++) {
       for (let j = 0; j < assignees.length; j++) {
-        if (assigneesArr[i] === assignees[j].username) {
+        if (assigneesArr[i] === assignees[j].name) {
           assigneesArr[i] = assignees[j]._id;
           continue;
         }
@@ -112,7 +112,7 @@ const CreateTask = ({ getTasksAssignor }) => {
                 />
               </div>
               <div className="form-item pb-2">
-                <Multiselect ref={multiSelect} options={assignees} selectedValues={[]} displayValue="username" placeholder="Assignees" hidePlaceholder={true} style={style} />
+                <Multiselect ref={multiSelect} options={assignees} selectedValues={[]} displayValue="name" placeholder="Assignees" hidePlaceholder={true} style={style} />
               </div>
               <div className="form-item my-2">
                 <TextValidator
@@ -138,6 +138,7 @@ const CreateTask = ({ getTasksAssignor }) => {
                     renderInput={(props) => <TextField {...props} fullWidth />}
                     label="Due date"
                     value={data.dueDate}
+                    minDate={new Date()}
                     onChange={(newValue) => {
                       setData((draft) => {
                         draft.dueDate = newValue;
@@ -147,10 +148,10 @@ const CreateTask = ({ getTasksAssignor }) => {
                 </LocalizationProvider>
               </div>
               <div className="form-item form-buttons">
-                <LoadingButton loadingPosition="start" startIcon={<RotateLeftIcon />} variant="contained" onClick={resetForm} className="reset-form">
+                <LoadingButton loadingPosition="start" startIcon={<RotateLeftIcon />} variant="outlined" onClick={resetForm} className="reset-form">
                   Reset Form
                 </LoadingButton>
-                <LoadingButton type="submit" loading={loading} loadingPosition="start" startIcon={<SendIcon />} variant="outlined">
+                <LoadingButton type="submit" loading={loading} loadingPosition="start" startIcon={<SendIcon />} variant="contained">
                   Create task
                 </LoadingButton>
               </div>

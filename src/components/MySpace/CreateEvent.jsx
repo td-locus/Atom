@@ -79,7 +79,7 @@ const CreateEvent = ({ fetchActivity, fetchUpcomingEvents, fetchEventsByMe }) =>
 
       dispatch(showFlashMessage("success", "Event created successfully!"));
 
-      // resetForm();
+      resetForm();
     } else dispatch(showFlashMessage("error", "An error occurred! Please try again."));
   };
 
@@ -242,10 +242,10 @@ const CreateEvent = ({ fetchActivity, fetchUpcomingEvents, fetchEventsByMe }) =>
                 </FormGroup>
               </div>
               <div className="form-item form-buttons">
-                <LoadingButton loadingPosition="start" startIcon={<RotateLeftIcon />} variant="contained" onClick={resetForm} className="reset-form">
+                <LoadingButton loadingPosition="start" startIcon={<RotateLeftIcon />} variant="outlined" onClick={resetForm} className="reset-form">
                   Reset Form
                 </LoadingButton>
-                <LoadingButton type="submit" loading={loading} loadingPosition="start" startIcon={<SendIcon />} variant="outlined">
+                <LoadingButton type="submit" loading={loading} loadingPosition="start" startIcon={<SendIcon />} variant="contained">
                   Create event
                 </LoadingButton>
               </div>

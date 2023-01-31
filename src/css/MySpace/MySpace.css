@@ -107,9 +107,9 @@
   gap: 10px;
   margin-top: 20px;
 }
-.reset-form {
+/* .reset-form {
   background-color: grey !important;
-}
+} */
 .form-buttons button {
   width: 50%;
 }
@@ -194,7 +194,8 @@
 }
 
 .create-event .MuiTextField-root label[data-shrink="true"],
-#event-type[data-shrink="true"] {
+#event-type[data-shrink="true"],
+#domain-label[data-shrink="true"] {
   transform: translate(14px, -12px) scale(0.75) !important;
   background-color: rgb(247, 247, 247) !important;
   padding: 0 5px;
@@ -258,6 +259,34 @@
 }
 input.searchBox::placeholder {
   color: rgba(0, 0, 0, 1);
+}
+.multiSelectContainer input#search_input::placeholder {
+  color: rgba(0, 0, 0, 0.6) !important;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.4375em;
+  letter-spacing: 0.00938em;
+}
+.multiSelectContainer input {
+  margin: 3px 0;
+}
+.custom-divider {
+  position: relative;
+  margin: 10px 10px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.custom-divider::before {
+  content: "";
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  background-color: #ccc;
+  border: 5px solid white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 @media (max-width: 767px) {
   .profile-box .name h3 {

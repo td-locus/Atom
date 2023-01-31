@@ -20,7 +20,7 @@ const UpdateTask = async (event) => {
         Authorization: `Bearer ${localStorage.getItem("authToken")}`,
       },
     });
-    return response.status;
+    return response.data;
   } catch (err) {
     return err.response.status;
   }
