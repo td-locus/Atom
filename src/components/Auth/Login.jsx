@@ -37,7 +37,6 @@ const Login = () => {
     dispatch(hideLoading());
 
     if (responseValues.status === 201 || responseValues.status === 200) {
-      // console.log(responseValues.response.user);
       dispatch(login(responseValues.response.user));
       await CreateAudit(responseValues.status === 200 ? "login" : "signup", responseValues.status === 200 ? "You logged in." : "You created an account.");
       document.cookie += " ;show=true";
@@ -48,7 +47,6 @@ const Login = () => {
     }
   };
   const responseGoogleFailed = (response) => {
-    console.log(response);
     dispatch(showErrorMessage());
   };
   const handleSubmit = async (e) => {

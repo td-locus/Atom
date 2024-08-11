@@ -17,10 +17,42 @@ import DateTimePicker from "@mui/lab/DateTimePicker";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SaveIcon from "@mui/icons-material/Save";
 import RotateLeftIcon from "@mui/icons-material/RotateLeft";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell, { tableCellClasses } from "@mui/material/TableCell";
+import { styled } from "@mui/material/styles";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 import { Multiselect } from "multiselect-react-dropdown";
 
 import { FetchTask, DeleteTask, UpdateTask } from "./helper/API";
 import { GetAssignees } from "../MySpace/helper/API";
+
+const StyledTableCell = styled(TableCell)(({ theme }) => ({
+  [`&.${tableCellClasses.head}`]: {
+    backgroundColor: "rgb(37, 150, 190)",
+    color: theme.palette.common.white,
+  },
+  [`&.${tableCellClasses.body}`]: {
+    fontSize: 14,
+  },
+}));
+
+const StyledTableRow = styled(TableRow)(({ theme }) => ({
+  "&:nth-of-type(odd)": {
+    backgroundColor: theme.palette.action.hover,
+  },
+  // hide last border
+  "&:last-child td, &:last-child th": {
+    border: 0,
+  },
+}));
+
+function createData(assignee, completed, completedAt) {
+  return { name: assignee?.name, completed, completedAt };
+}
 
 const Task = () => {
   const history = useHistory();
@@ -37,6 +69,7 @@ const Task = () => {
   const handleClose = () => {
     setOpen(false);
   };
+  const [rows, setRows] = useState([]);
 
   const [task, setTask] = useState({
     title: "",
@@ -52,8 +85,14 @@ const Task = () => {
     dispatch(showLoading());
     const fetchTask = async () => {
       const task_ = await FetchTask(taskId);
+      const rows_ = [];
+      for (let i = 0; i < task_.assignees.length; i++) {
+        rows_.push(createData(task_.assignees[i].assignee, task_.assignees[i].completed, task_.assignees[i].completed_at));
+      }
+      setRows(rows_);
       setTask(task_);
       setOriginal(task_);
+
       dispatch(hideLoading());
     };
     fetchTask();
@@ -65,11 +104,7 @@ const Task = () => {
       setAssignees(response);
       const selectedMembers = [];
       for (let i = 0; i < task.assignees.length; i++) {
-        for (let j = 0; j < response.length; j++) {
-          if (task.assignees[i].assignee === response[j]._id) {
-            selectedMembers.push(response[j]);
-          }
-        }
+        selectedMembers.push(task.assignees[i].assignee);
       }
       setSelectedValues(selectedMembers);
     };
@@ -96,7 +131,7 @@ const Task = () => {
     });
     for (let i = 0; i < assigneesArr.length; i++) {
       for (let j = 0; j < assignees.length; j++) {
-        if (assigneesArr[i] === assignees[j].username) {
+        if (assigneesArr[i] === assignees[j].name) {
           assigneesArr[i] = assignees[j]._id;
           continue;
         }
@@ -107,12 +142,16 @@ const Task = () => {
     task_.assignees = assigneesArr;
     task_._id = taskId;
 
-    console.log(task_);
-    const status = await UpdateTask(task_);
+    const data = await UpdateTask(task_);
 
-    if (status === 201) {
+    if (data) {
       dispatch(hideLoading());
       dispatch(showFlashMessage("success", "Task updated successfully!"));
+      const rows_ = [];
+      for (let i = 0; i < data.assignees.length; i++) {
+        rows_.push(createData(data.assignees[i].assignee, data.assignees[i].completed, data.assignees[i].completed_at));
+      }
+      setRows(rows_);
     } else {
       dispatch(showErrorMessage());
     }
@@ -200,7 +239,7 @@ const Task = () => {
           />
         </Grid>
         <Grid item xs={12}>
-          {<Multiselect options={assignees} selectedValues={selectedValues} displayValue="username" placeholder="Assignees" hidePlaceholder={true} style={style} />}
+          {<Multiselect options={assignees} selectedValues={selectedValues} displayValue="name" placeholder="Assignees" hidePlaceholder={true} style={style} />}
         </Grid>
         <Grid item xs={12}>
           <Button variant="outlined" color="error" className="me-2 mt-2" onClick={handleClickOpen} startIcon={<DeleteIcon />}>
@@ -213,6 +252,42 @@ const Task = () => {
             Save Changes
           </Button>
         </Grid>
+      </Grid>
+
+      <Grid container spacing={2} xs={12} md={10} sx={{ mx: "auto", mt: 3 }}>
+        <TableContainer component={Paper}>
+          <Table sx={{ minWidth: 700 }} aria-label="customized table">
+            <TableHead>
+              <TableRow>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align="right">Status</StyledTableCell>
+                <StyledTableCell align="right">Completed at</StyledTableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <StyledTableRow key={row.name}>
+                  <StyledTableCell component="th" scope="row">
+                    {row.name}
+                  </StyledTableCell>
+                  <StyledTableCell align="right">{row.completed ? "Completed" : "Pending"}</StyledTableCell>
+                  <StyledTableCell align="right">
+                    {row.completed
+                      ? new Date(row.completedAt).toLocaleTimeString("en-US", {
+                          day: "numeric",
+                          month: "short",
+                          year: "numeric",
+                          hour12: true,
+                          hour: "numeric",
+                          minute: "numeric",
+                        })
+                      : "-"}
+                  </StyledTableCell>
+                </StyledTableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Grid>
     </Container>
   );

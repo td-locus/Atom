@@ -42,11 +42,10 @@ const GoogleSigninHelper = async (credentials) => {
       avatar: credentials.imageUrl,
     });
     localStorage.setItem("authToken", response.data.token);
-    // console.log(response.data.avatar);
     return { response: response.data, status: response.status };
   } catch (err) {
     console.log(err.response);
-    return { status: err.response.status, response: err.response };
+    return { status: err?.response?.status, response: err.response };
   }
 };
 

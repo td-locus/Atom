@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Snackbar from "@mui/material/Snackbar";
 import { Alert } from "@mui/material";
 import Backdrop from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
-
+import { createTheme, ThemeProvider, styled } from "@mui/material/styles";
 // Components
 import Sidebar from "./components/Reusable/Sidebar";
 import AppRoutes from "./routes/route";
@@ -20,14 +20,20 @@ import { reducer, initialState } from "./reducer/reducer";
 import axios from "axios";
 import { hideFlashMessage } from "./reducer/actions";
 import { ErrorBoundary } from "./components/Reusable/ErrorBoundary";
-import Error from "./components/Reusable/Error";
 
 if (process.env.NODE_ENV === "development") {
-  axios.defaults.baseURL = "http://localhost:5000";
-  // axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+  axios.defaults.baseURL = "http://localhost:9000";
 } else {
-  axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+  axios.defaults.baseURL = "https://glossy-metric-286808.uc.r.appspot.com";
 }
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "rgb(37, 150, 190)",
+    },
+  },
+});
 
 const App = () => {
   const handleClose = () => {
@@ -45,17 +51,17 @@ const App = () => {
     }
   }, [state.loggedIn]);
 
-  function errorHandler(error, errorInfo){
-    console.log("Logging", {error, errorInfo})
-  }
-
   return (
     <ErrorBoundary>
       <DispatchContext.Provider value={{ dispatch }}>
         <StateContext.Provider value={{ state }}>
           <Router>
             {/* Flash Messages */}
-            <Snackbar open={state.showFlashMessage} autoHideDuration={4000} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal: "right" }}>
+            <Snackbar
+              open={state.showFlashMessage}
+              autoHideDuration={4000}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}>
               <Alert onClose={handleClose} severity={state.flashMessageType} variant="standard" sx={{ width: "100%" }}>
                 {state.flashMessage}
               </Alert>
@@ -68,7 +74,9 @@ const App = () => {
 
             {/* Sidebar */}
             {state.loggedIn && <Sidebar />}
-            <AppRoutes />
+            <ThemeProvider theme={theme}>
+              <AppRoutes />
+            </ThemeProvider>
           </Router>
         </StateContext.Provider>
       </DispatchContext.Provider>
