@@ -45,7 +45,7 @@ const GoogleSigninHelper = async (credentials) => {
     return { response: response.data, status: response.status };
   } catch (err) {
     console.log(err.response);
-    return { status: err.response.status, response: err.response };
+    return { status: err?.response?.status, response: err.response };
   }
 };
 

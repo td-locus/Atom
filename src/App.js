@@ -24,7 +24,7 @@ import { ErrorBoundary } from "./components/Reusable/ErrorBoundary";
 if (process.env.NODE_ENV === "development") {
   axios.defaults.baseURL = "http://localhost:9000";
 } else {
-  axios.defaults.baseURL = process.env.REACT_APP_BACKEND_URL;
+  axios.defaults.baseURL = "https://glossy-metric-286808.uc.r.appspot.com";
 }
 
 const theme = createTheme({
@@ -57,7 +57,11 @@ const App = () => {
         <StateContext.Provider value={{ state }}>
           <Router>
             {/* Flash Messages */}
-            <Snackbar open={state.showFlashMessage} autoHideDuration={4000} onClose={handleClose} anchorOrigin={{ vertical: "bottom", horizontal: "right" }}>
+            <Snackbar
+              open={state.showFlashMessage}
+              autoHideDuration={4000}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}>
               <Alert onClose={handleClose} severity={state.flashMessageType} variant="standard" sx={{ width: "100%" }}>
                 {state.flashMessage}
               </Alert>
